@@ -41,7 +41,7 @@ func testBuild(t *testing.T, _ spec.G, it spec.S) {
 	it("adds the go layer if in the build plan", func() {
 		f.AddDependency(golang.Dependency, stubNodeFixture)
 		f.AddBuildPlan(golang.Dependency, buildplan.Dependency{
-			Metadata: buildplan.Metadata{"build": true},
+			Metadata: buildplan.Metadata{"build": true, "launch": true},
 		})
 
 		code, err := runBuild(f.Build)
